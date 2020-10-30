@@ -10,7 +10,7 @@ ament_add_gtest(test_basics test_basics.cpp)
 ament_target_dependencies(test_basics Eigen3)
 
 ament_add_gtest(test_point_inclusion test_point_inclusion.cpp)
-target_link_libraries(test_point_inclusion ${PROJECT_NAME})
+target_link_libraries(test_point_inclusion ${PROJECT_NAME} ${Boost_FILESYSTEM_LIBRARY} )
 
 ament_add_gtest(test_bounding_sphere test_bounding_sphere.cpp)
 target_link_libraries(test_bounding_sphere ${PROJECT_NAME})
@@ -25,7 +25,7 @@ ament_add_gtest(test_create_mesh test_create_mesh.cpp)
 target_link_libraries(test_create_mesh ${PROJECT_NAME})
 
 ament_add_gtest(test_loaded_meshes test_loaded_meshes.cpp)
-target_link_libraries(test_loaded_meshes ${PROJECT_NAME})
+target_link_libraries(test_loaded_meshes ${PROJECT_NAME} ${Boost_FILESYSTEM_LIBRARY})
 
 ament_add_gtest(test_shapes test_shapes.cpp)
 target_link_libraries(test_shapes ${PROJECT_NAME})
@@ -34,4 +34,4 @@ ament_add_gtest(test_ray_intersection test_ray_intersection.cpp)
 target_link_libraries(test_ray_intersection ${PROJECT_NAME})
 
 ament_add_gtest(test_body_operations test_body_operations.cpp)
-target_link_libraries(test_body_operations ${PROJECT_NAME})
+target_link_libraries(test_body_operations ${PROJECT_NAME} ${Boost_FILESYSTEM_LIBRARY})
